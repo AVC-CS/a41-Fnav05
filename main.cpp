@@ -33,6 +33,7 @@ int main()
   cin >> numberofSold;
   
   if (numberofSold < 0) {
+    cout << "positive ";
     cout << "Error" << endl;
     return 0;
   }
