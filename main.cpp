@@ -33,29 +33,21 @@ int main()
   cin >> numberofSold;
   
   if (numberofSold < 0) {
-    cout << "positive ";
-    cerr << "Error" << endl;
-    exit(EXIT_FAILURE);
+    cout << "Error" << endl;
+    return 0;
   }
   // Determine discount rate based on quantity
   // TODO
-  if (numberofSold >=10) {
-    if (numberofSold <=19) {
-      dRate = PERC19;
-    }
-    else if (numberofSold >=20) {
-      if (numberofSold <= 49) {
-        dRate = PERC49;
-      }
-    }
-    else if (numberofSold >= 50) {
-      if (numberofSold <= 99) {
-        dRate = PERC99;
-      }
-    }
-    else if (numberofSold >= 100) {
-      dRate = PERC100;
-    }
+  if (numberofSold >= 100) {
+    dRate = PERC100;
+  } else if (numberofSold >= 50) {
+    dRate = PERC99;
+  } else if (numberofSold >= 20) {
+    dRate = PERC49;
+  } else if (numberofSold >= 10) {
+    dRate = PERC19;
+  } else {
+    dRate = 0.0;
   }
 
   // Calculate original amount, discount, and total
